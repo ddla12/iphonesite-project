@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .title {
+        @apply capitalize text-5xl md:text-7xl font-semibold;
+    }
+
+    .zoom-btn {
+        @apply focus:bg-zinc-900 p-2 rounded-sm;
+    }
+    
+    .zooming-image {
+        --border-size: 0;
+
+        @apply relative;
+
+        &::before {
+            border-width: var(--border-size);
+            @apply content-[""] absolute w-full max-w-[100%] h-full border-zinc-900 border-opacity-50 z-10;
+        }
+    }
+
+    #iphone-camera-img {
+        @apply bg-no-repeat bg-fixed bg-right-bottom;
+        background-image: url("https://www.telecomarmenia.am/eshop/images/product/3/15712236291953.png");
+    }
+
+    #lens-camera {
+        @apply bg-fixed bg-no-repeat;
+        background-image: url("lens-image.webp");
+    }
+
+    #iphone-img {
+        @apply bg-fixed bg-no-repeat bg-center bg-contain;
+        background-image: url("https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-11-pro-max-space-gray-back.png");
+    }
+
+    .img-shadow {
+        @apply bg-gradient-to-b from-black to-transparent h-24;
+    }
+}
